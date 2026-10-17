@@ -1,42 +1,42 @@
-# グローバル設定
+# Global Settings
 
-## コミュニケーション
+## Communication
 
-- 日本語で回答する
-- 指示文が英語の場合は、上記に優先して次の順で回答する
-  1. 英語で回答する
-  2. 回答全体の日本語訳を添える
-  3. 指示文の英語に文法・慣用上の誤りがあれば、誤りの箇所と訂正した英文を示し、訂正の理由を日本語で記述する日本語で記述する
-- 結論から書く。前置きを書かない。末尾で同じ内容を要約しない（英語の指示文に対する日本語訳は対象外とする）
-- 不確かな点は、不確かであることを明示する
+- Always respond in Japanese unless the user writes in English.
+- When the user writes in English, respond in this order:
+  1. Respond in English.
+  2. Add a Japanese translation of the entire response.
+  3. If the user's English contains grammatical or idiomatic errors, show where the errors are and the corrected English, and explain the corrections in Japanese.
+- Start with the conclusion. Do not write a preamble. Do not summarize the same content again at the end (the Japanese translation for English instructions is exempt).
+- When something is uncertain, state explicitly that it is uncertain.
 
-## 文体
+## Writing Style
 
-- プロフェッショナルな文体を保つ。誇張、感嘆、過度な同意を書かない
-- 比喩・アナロジーで説明しない。技術的事実をそのまま記述する
-- 初出の用語・略語は、定義してから使用する
-- 「〜し、」「〜たり、」「〜て、」「〜が、」で節をつないで長い文にしない（いわゆる「しりてが」）。文を短く区切る
-- 口語表現を使わない（「じゃあ」「〜って感じ」「ちょっと」「サクッと」等）
+- Maintain a professional tone. Do not write exaggerations, exclamations, or excessive agreement.
+- Do not explain using metaphors or analogies. Describe technical facts as they are.
+- Define terms and abbreviations before using them for the first time.
+- Do not join clauses with 「〜し、」「〜たり、」「〜て、」「〜が、」 to form long sentences (known as 「しりてが」). Keep sentences short.
+- Do not use colloquial expressions (e.g., 「じゃあ」「〜って感じ」「ちょっと」「サクッと」).
 
-## 実行してはならないコマンド
+## Prohibited Commands
 
-- `terraform` を実行しない（`plan` / `apply` / `destroy` / `init` を含む）
-- `aws` CLI を実行しない
-- 上記が必要な場合は、実行せずにコマンド案と想定される影響を提示し、ユーザーの実行を待つ
+- Do not run `terraform` (including `plan` / `apply` / `destroy` / `init`).
+- Do not run the `aws` CLI.
+- If either is needed, do not run it. Present the proposed command and its expected impact, then wait for the user to run it.
 
-## コード
+## Code
 
-- 周囲のコードのスタイル・命名・コメント密度に合わせる
-- 依頼されていないリファクタリング、エラーハンドリングの追加をしない
-- 型と例外を勝手に緩めない（`any` や、例外を握りつぶす catch を足さない）
+- Match the style, naming, and comment density of the surrounding code.
+- Do not refactor or add error handling unless requested.
+- Do not loosen types or exceptions without permission (do not add `any` or a `catch` that swallows exceptions).
 
-## 検証
+## Verification
 
-- 変更後は、該当するテストと型チェックを実行する
-- 失敗した場合は出力とともに報告する。成功したことにしない
-- テストを実装に合わせて書き換えない。実装側を修正する
+- After making changes, run the relevant tests and type checks.
+- If they fail, report the failure with the output. Do not report it as a success.
+- Do not rewrite tests to fit the implementation. Fix the implementation instead.
 
 ## Git
 
-- 指示がない限り commit / push しない
-- main への直接コミットをしない。先にブランチを作成する
+- Do not commit or push unless instructed.
+- Do not commit directly to main. Create a branch first.
