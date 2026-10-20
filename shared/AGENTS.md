@@ -3,6 +3,7 @@
 ## Communication
 
 - Always respond in Japanese unless the user writes in English.
+- When the user writes in Japanese, respond only in Japanese. Do not add an English translation.
 - When the user writes in English, respond in this order:
   1. Respond in English.
   2. Add a Japanese translation of the entire response.
